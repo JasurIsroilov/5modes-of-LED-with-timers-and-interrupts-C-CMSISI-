@@ -1,0 +1,17 @@
+23:16:32 **** Build of configuration Debug for project laba2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103RBTx -DSTM32 -DSTM32F1 -c -I../Inc -I"D:/4kurs/1 sem/PMS/2laba/laba2/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/4kurs/1 sem/PMS/2laba/laba2/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "laba2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\4kurs\1 sem\PMS\2laba\laba2\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="laba2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: laba2.elf
+ 
+arm-none-eabi-size   laba2.elf 
+arm-none-eabi-objdump -h -S  laba2.elf  > "laba2.list"
+arm-none-eabi-objcopy  -O binary  laba2.elf  "laba2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   1700	     12	   1572	   3284	    cd4	laba2.elf
+Finished building: default.size.stdout
+ 
+Finished building: laba2.bin
+ 
+Finished building: laba2.list
+ 
